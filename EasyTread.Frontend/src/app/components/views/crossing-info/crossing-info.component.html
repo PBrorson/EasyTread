@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="my-font">
+      <div class="m-2">
+        <div class="row d-flex">
+          <div class="modal-header border-0">
+            <h1 class="modal-title" style="color: #1e0050">
+              {{ item.licensePlate.plate }}
+            </h1>
+            <div
+              style="border: 1px solid #000; border-radius: 4px; padding: 10px"
+            >
+              <h3>{{ "recommended action" | translate }}</h3>
+
+              <div style="display: flex; flex-direction: row">
+                <div>
+                  <ng-container
+                    *ngIf="
+                      checkTireAlignment(item) ||
+                        checkTirePressure(item) ||
+                        checkTireRating(item);
+                      else statusGood
+                    "
+                  >
+                    <ng-container
+                      *ngTemplateOutlet="statusReplace"
+                    ></ng-container>
+                  </ng-container>
+                  <ng-template #statusGood>
+                    <img
+                      src="../../../../assets/status_good.png"
+                      alt="{{ 'good' | translate }}"
+                      style="width: 50px; height: 50px"
+                    />
+                    <b> {{ "no action required" | translate }}</b>
+                  </ng-template>
+                  <ng-template #statusReplace>
+                    <img
+                      src="../../../../assets/status_replace.png"
+                      alt="{{ 'replace' | translate }}"
+                      style="width: 50px; height: 50px"
+                    />
+                  </ng-template>
+                </div>
+                <div style="margin-left: 15px">
+                  <i
+                    *ngIf="checkTireAlignment(item)"
+                    class="warning-icon"
+                    title="{{ 'check tire alignment' | translate }}"
+                    style="font-style: normal"
+                  >
+                    <img
+                      src="../../../../assets/tirealignment.png"
+                      alt="{{ 'check tire alignment' | translate }}"
+                      style="width: 70px; height: 25px"
+                    />
+                    <b> {{ "check tire alignment" | translate }}</b
+                    ><br />
+                  </i>
+
+                  <i
+                    *ngIf="checkTirePressure(item)"
+                    class="warning-icon"
+                    title="{{ 'check tire pressure' | translate }}"
+                    style="font-style: normal"
+                  >
+                    <img
+                      src="../../../../assets/pressurecheck.png"
+                      alt="{{ 'check tire pressure' | translate }}"
+                      style="width: 70px; height: 25px"
+                    />
+                    <b> {{ "check tire pressure" | translate }}</b
+                    ><br />
+                  </i>
+
+                  <i
+                    *ngIf="checkTireRating(item)"
+                    class="warning-icon"
+                    title="{{ 'check tire rating' | translate }}"
+                    style="font-style: normal"
+                  >
+                    <img
+                      src="../../../../assets/tirechange.png"
+                      alt="{{ 'check tire rating' | translate }}"
+                      style="width: 70px; height: 25px"
+                    />
+                    <b> {{ "check tire rating" | translate }}</b>
+                  </i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <ul ngbNav #nav="ngbNav" class="nav-tabs">
+              <li ngbNavItem>
+                <a ngbNavLink
+                  ><i class="bi bi-info-circle"></i>
+                  {{ "details" | translate }}</a
+                >
+                <ng-template ngbNavContent>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>{{ "front left" | translate }}</th>
+                          <th>{{ "front right" | translate }}</th>
+                          <th>{{ "rear left" | translate }}</th>
+                          <th>{{ "rear right" | translate }}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <ng-container *ngFor="let tire of item.tires">
+                            <td>
+                              <ng-container
+                                *ngIf="
+                                  checkWearPattern(
+                                    tire.propertySetResponse.wearPatternResponse
+                                      .info
+                                  );
+                                  else normalStatus
+                                "
+                              >
+                                <i
+                                  class="bi"
+                                  [ngClass]="[
+                                    statusInfo['MARGINAL'].icon,
+                                    statusInfo['MARGINAL'].colorClass
+                                  ]"
+                                  title="{{
+                                    wearPatternInfo[
+                                      tire.propertySetResponse
+                                        .wearPatternResponse.info
+                                    ].message | translate
+                                  }}"
+                                ></i>
+                                {{
+                                  wearPatternInfo[
+                                    tire.propertySetResponse.wearPatternResponse
+                                      .info
+                                  ].message | translate
+                                }}
+                              </ng-container>
+                              <ng-template #normalStatus>
+                                <i
+                                  class="bi"
+                                  [ngClass]="[
+                                    statusInfo[
+                                      tire.regionResponse[0].vehicleRating
+                                    ].icon,
+                                    statusInfo[
+                                      tire.regionResponse[0].vehicleRating
+                                    ].colorClass
+                                  ]"
+                                  title="{{
+                                    statusInfo[
+                                      tire.regionResponse[0].vehicleRating
+                                    ].message | translate
+                                  }}"
+                                ></i>
+                                {{
+                                  statusInfo[
+                                    tire.regionResponse[0].vehicleRating
+                                  ].message | translate
+                                }}
+                              </ng-template>
+                            </td>
+                          </ng-container>
+                        </tr>
+                        <tr>
+                          <ng-container *ngFor="let tire of item.tires">
+                            <td>
+                              <b>{{ tire.regionResponse[0].value }} mm</b>
+                            </td>
+                          </ng-container>
+                        </tr>
+
+                        <tr>
+                          <td *ngFor="let tire of item.tires">
+                            <img
+                              [src]="
+                                getImageForWearPattern(
+                                  tire.propertySetResponse.wearPatternResponse
+                                    .info
+                                )
+                              "
+                              alt="Wear Pattern"
+                              width="80"
+                              height="32"
+                            />
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            <span title="Inre regionen">
+                              {{ item.tires[0].regionResponse[2].value }}</span
+                            >
+                            <span title="Mellan regionen">
+                              {{ item.tires[0].regionResponse[3].value }}</span
+                            >
+                            <span title="Yttre regionen">
+                              {{ item.tires[0].regionResponse[4].value }}</span
+                            >
+                          </td>
+                          <td>
+                            {{ item.tires[1].regionResponse[2].value }}
+                            {{ item.tires[1].regionResponse[3].value }}
+                            {{ item.tires[1].regionResponse[4].value }}
+                          </td>
+                          <td>
+                            {{ item.tires[2].regionResponse[2].value }}
+                            {{ item.tires[2].regionResponse[3].value }}
+                            {{ item.tires[2].regionResponse[4].value }}
+                          </td>
+                          <td>
+                            {{ item.tires[3].regionResponse[2].value }}
+                            {{ item.tires[3].regionResponse[3].value }}
+                            {{ item.tires[3].regionResponse[4].value }}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </ng-template>
+              </li>
+              <li ngbNavItem>
+                <a ngbNavLink
+                  ><i class="bi bi-person-vcard"></i>
+                  {{ "customer" | translate }}</a
+                >
+
+                <ng-template ngbNavContent>
+                  <div
+                    class="card mb-2"
+                    style="max-width: 18rem; border-color: #1e0050"
+                  >
+                    <div
+                      class="card-header"
+                      style="background-color: #1e0050; color: white"
+                    >
+                      Anders Andersson
+                    </div>
+                    <div class="card-body">
+                      <p class="card-text">
+                        <b>{{ "adress" | translate }}</b> Vägen 1<br />
+                        <b>{{ "phone number" | translate }}</b> 070-123 45 67<br />
+                        <b>{{ "email adress" | translate }}</b>
+                        anders@andersson.se<br />
+                      </p>
+                    </div>
+                  </div>
+                </ng-template>
+              </li>
+              <li ngbNavItem>
+                <a ngbNavLink
+                  ><i class="bi bi-calculator"></i> Kostnadsförslag</a
+                >
+                <ng-template ngbNavContent>
+                  <div class="d-flex justify-content-around">
+                    <div
+                      class="card mb-2"
+                      style="max-width: 18rem; border-color: #1e0050"
+                    >
+                      <div class="card-body">
+                        <img
+                          src="../../../../assets/newtire.png"
+                          class="img-fluid"
+                        />
+                        <p class="card-text">
+                          <b
+                            >W185/65R15 92 T NO HKPL 9 Du/Al (Originalfälg 15"
+                            Corvara)</b
+                          >
+                          <br />
+                        </p>
+
+                        <p>
+                          <b>Nokian</b><br />
+                          SEWA07428
+                        </p>
+
+                        <hr />
+
+                        <div
+                          class="btn-group mt-2 d-flex justify-content-between"
+                        >
+                          <button class="btn btn-custom" type="button">
+                            {{ "add" | translate }} <i class="bi bi-cart"></i>
+                          </button>
+
+                          <button class="btn btn-custom-color" type="button">
+                            {{ "read more" | translate }}
+                            <i class="bi bi-arrow-right"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="card mb-2"
+                      style="max-width: 18rem; border-color: #1e0050"
+                    >
+                      <div class="card-body">
+                        <img
+                          src="../../../../assets/newtire.png"
+                          class="img-fluid"
+                        />
+                        <p class="card-text">
+                          <b
+                            >W185/65R15 92 T NO HKPL 9 Du/Al (Originalfälg 15"
+                            Corvara)</b
+                          >
+                          <br />
+                        </p>
+
+                        <p>
+                          <b>Nokian</b><br />
+                          SEWA07428
+                        </p>
+
+                        <hr />
+
+                        <div
+                          class="btn-group mt-2 d-flex justify-content-between"
+                        >
+                          <button class="btn btn-custom" type="button">
+                            {{ "add" | translate }} <i class="bi bi-cart"></i>
+                          </button>
+
+                          <button class="btn btn-custom-color" type="button">
+                            {{ "read more" | translate }}
+                            <i class="bi bi-arrow-right"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </li>
+              <li ngbNavItem>
+                <a ngbNavLink (click)="openReportInNewWindow()"
+                  ><i class="bi bi-file-earmark-pdf"></i>
+                  {{ "report" | translate }}</a
+                >
+              </li>
+            </ul>
+            <div [ngbNavOutlet]="nav" class="mt-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

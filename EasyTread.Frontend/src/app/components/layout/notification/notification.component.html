@@ -1,0 +1,13 @@
+<div class="alert alert-danger" *ngIf="newAlerts > 0 && !dismissed">
+  <span class="alert-icon" (click)="toggleNotification()">
+    <i class="bi bi-bell" [ngClass]="{ 'text-warning': newAlerts > 0 }"></i>
+    <span class="alert-count bg-white text-danger">{{ newAlerts }}</span>
+  </span>
+  <span class="alert-text"></span>
+  <button type="button" class="close" (click)="dismissNotification()">×</button>
+  <div class="notification-submenu" *ngIf="showNotification">
+    <ul>
+      <li *ngFor="let object of latestObjects">Test 1</li>
+    </ul>
+  </div>
+</div>

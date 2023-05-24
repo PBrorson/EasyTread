@@ -1,0 +1,138 @@
+<div class="row">
+  <div class="col-md-4 d-flex align-items-center">
+    <app-search-bar
+      class="me-2 mt-2"
+      (searchTextChanged)="onSearchTextChanged($event)"
+    ></app-search-bar>
+  </div>
+  <div class="col-md-1 d-flex align-items-center">
+    <button
+      class="btn btn-outline-secondary me-2 mt-2"
+      (click)="openCrossingChartModal()"
+    >
+      <i class="bi bi-pie-chart" style="color: black"></i>
+    </button>
+  </div>
+  <div class="col-md-3 d-flex align-items-center">
+    <app-date-picker
+      class="me-2 mt-2"
+      [(selectedDateRange)]="selectedDateRange"
+      (selectedDateRangeChange)="onSelectedDateRangeChange($event)"
+    ></app-date-picker>
+  </div>
+  <div class="col-md-4 d-flex align-items-center">
+    <div
+      *ngIf="showAlert"
+      class="inline-alert alert alert-success p-2 mb-0 me-0 mt-1"
+      role="alert"
+    >
+      <i class="bi bi-bell-fill"></i> {{ "new reading" | translate }}
+      {{ latestLicensePlate }}
+    </div>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th (click)="toggleSort('createdTime')">
+          {{ "timestamp" | translate }}
+        </th>
+        <th (click)="toggleSort('licensePlate')">
+          {{ "license plate" | translate }}
+        </th>
+        <th>{{ "brand" | translate }}</th>
+        <th>{{ "model" | translate }}</th>
+        <th>{{ "action" | translate }}</th>
+        <th>
+          {{ "retailer" | translate }}
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data$ | async | slice : startIndex : endIndex">
+        <td>{{ formatCompactDate(item.createdTime) }}</td>
+
+        <td>{{ item.licensePlate?.plate }}</td>
+
+        <td></td>
+        <td></td>
+        <td>
+          <ng-container
+            *ngIf="
+              !checkTireAlignment(item) &&
+              !checkTirePressure(item) &&
+              !checkTireRating(item)
+            "
+          >
+            <i
+              class="bi"
+              [ngClass]="[
+                statusInfo[item.vehicleRating].icon,
+                statusInfo[item.vehicleRating].colorClass
+              ]"
+              title="{{ statusInfo[item.vehicleRating].message | translate }}"
+            ></i>
+          </ng-container>
+
+          <i
+            *ngIf="checkTireAlignment(item)"
+            class="warning-icon"
+            title="{{ 'check tire alignment' | translate }}"
+          >
+            <img
+              src="../../../../assets/tirealignment.png"
+              alt="{{ 'check tire alignment' | translate }}"
+              style="width: 70px; height: 25px"
+            />
+          </i>
+
+          <i
+            *ngIf="checkTirePressure(item)"
+            class="warning-icon"
+            title="{{ 'check tire pressure' | translate }}"
+          >
+            <img
+              src="../../../../assets/pressurecheck.png"
+              alt="{{ 'check tire pressure' | translate }}"
+              style="width: 70px; height: 25px"
+            />
+          </i>
+
+          <i
+            *ngIf="checkTireRating(item)"
+            class="warning-icon"
+            title="{{ 'check tire rating' | translate }}"
+          >
+            <img
+              src="../../../../assets/tirechange.png"
+              alt="{{ 'check tire rating' | translate }}"
+              style="width: 70px; height: 25px"
+            />
+          </i>
+        </td>
+        <td>{{ item.dealerNumber }}</td>
+        <td>
+          <button
+            (click)="openDetailsModal(item)"
+            type="button"
+            class="btn btn-secondary btn-sm"
+          >
+            <i class="bi bi-info-circle"></i>
+            {{ "details" | translate }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="d-flex justify-content-center">
+  <app-pagination
+    [currentPage]="currentPage"
+    [totalItems]="totalItems"
+    [pageSize]="pageSize"
+    (pageChange)="onPageChange($event)"
+  ></app-pagination>
+</div>

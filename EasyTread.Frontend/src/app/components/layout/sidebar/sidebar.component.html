@@ -1,0 +1,39 @@
+<div
+  class="sidebar d-flex flex-column justify-content-center align-items-center"
+  style="
+    height: 100vh;
+    min-width: 50px;
+    max-width: 10%;
+    border-right: 1px solid #ddd;
+  "
+>
+  <button
+    (click)="goToCrossingBadTires()"
+    class="btn btn-outline-secondary btn-sm my-1 d-flex justify-content-center align-items-center"
+  >
+    <img
+      src="../../../../assets/tire.svg"
+      alt="Tire Icon"
+      style="color: black; width: 14px; height: 21px"
+    />
+  </button>
+
+  <button class="btn btn-outline-secondary btn-sm my-1">
+    <i class="bi bi-wrench" style="color: black"></i>
+  </button>
+
+  <button
+    (click)="goToCrossingDetails()"
+    class="btn btn-outline-secondary btn-sm my-1"
+  >
+    <i class="bi bi-file-earmark-bar-graph-fill" style="color: black"></i>
+  </button>
+
+  <button class="btn btn-outline-secondary btn-sm my-1">
+    <i class="bi bi-gear-fill" style="color: black"></i>
+  </button>
+
+  <button class="btn btn-outline-secondary btn-sm my-1">
+    <i class="bi bi-book" style="color: black"></i>
+  </button>
+</div>

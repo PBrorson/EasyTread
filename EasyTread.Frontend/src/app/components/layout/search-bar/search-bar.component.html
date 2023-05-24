@@ -1,0 +1,19 @@
+<div class="input-group">
+  <span class="input-group-text"><i class="bi bi-search"></i></span>
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="searchText"
+    (ngModelChange)="onSearchTextChange()"
+    placeholder="{{ 'license plate' | translate }}"
+  />
+  <button
+    class="btn btn-outline-secondary"
+    type="button"
+    *ngIf="searchText !== ''"
+    (click)="clearSearchField()"
+    style="background-color: #e9ecef"
+  >
+    <i class="bi bi-x-circle-fill" style="color: red"></i>
+  </button>
+</div>

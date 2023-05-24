@@ -1,0 +1,462 @@
+{
+  "brand" : "Märke",
+  "model" : "Modell",
+  "choose date" : "Välj  datum",
+  "no action required" : "Inga åtgärder krävs",
+  "linearWearLeft " : "Snedslitning vänster",
+  "linearWearRight" : "Snedslitning höger",
+  "parabolicWearCentered" : "Slitage centrerat",
+  "parabolicWearOutside" : "Slitage utanför",
+  "check tire rating" : "Byt ut däck",
+  "recommended action" : "Rekommenderade åtgärder",
+  "adress" : "Adress",
+  "customer" : "Kundinfo",
+  "chartTitle" : "Avläsningar",
+  "add" : "Lägg till",
+  "read more" : "Läs mer",
+  "check tire alignment" : "Kontrollera chassi",
+  "check tire pressure" : "Kontrollera däcktryck",
+  "action" : "Åtgärd",
+  "report" : "Rapport",
+  "new reading" : "Ny avläsning:",
+  "previous" : "Föregående",
+  "next" : "Nästa",
+  "forwards": "Framåt",
+  "front left": "Vänster fram",
+  "front right": "Höger fram",
+  "rear left": "Vänster bak",
+  "rear right": "Höger bak",
+  "crossing direction": "Körriktning",
+  "neutral": "Neutral",
+  "good": "Bra",
+  "marginal": "Marginel",
+  "replace": "Byt ut",
+  "license plate": "Registreringsnummer",
+  "tread depth": "Mönsterdjup",
+  "email adress": "Epostadress",
+  "phone number": "Telefonnummer",
+  "details": "Detaljer",
+  "name": "Namn", 
+  "id": "Id", 
+  "retailer": "Återförsäljare",
+  "crossing": "Avläsning",
+  "timestamp": "Tid för avläsning",  
+  "username": "Användarnamn", 
+  "password": "Lösenord", 
+  "enter username": "Ange användarnamn", 
+  "enter password": "Ange lösenord", 
+  "submit": "Skicka", 
+  "filter": "Filtrera",
+  "about": "Om ditt",
+  "baseService": "Basservice",
+  "choose": "Välj",
+  "indicate": "Ange",
+  "change": "Ändra",
+  "enter": "Fyll i",
+  "find": "Hitta",
+  "back": "Tillbaka",
+  "forward": "Nästa",
+  "missing": "Saknas",
+  "short": "Mindre än 7 dagar",
+  "short-tyre": "Kort",
+  "medium": "Cirka 8 - 14 dagar",
+  "long": "Mer än 14 dagar",
+  "Recommended": "Rekommenderad",
+  "campaign": "kampanj",
+  "are-you-sure": "Är du säker?",
+  "description": "Beskrivning",
+  "lights": "Lampor",
+  "service-included": "Service ingår",
+  "tech-update-price": "Ingen kostnad",
+  "troubleshooting-price": "Pris tillkommer",
+  "total-sum": "Totalsumma",
+  "sum": "Summa: {{ cost }} kr",
+  "fr-sum": "Summa: fr {{ cost }} kr",
+  "view-more": "Visa fler",
+  "view-less": "Visa färre",
+  "close": "Stäng",
+  "file": "Bifogade filer",
+  "insurance-company": "Försäkringsbolag",
+  "total-cost": "Totalkostnad {{ cost }}kr",
+  "part-pay": "Delbetala {{ cost }}kr/mån",
+  "about-vehicle": {
+    "header": "Om din bil",
+    "footer-button": "Nästa steg",
+    "footer-title": "Din bokning:",
+    "title": "1. Boka service",
+    "title-brand": "1. Boka service för din {{ brand }}",
+    "title-upper": "Fordon",
+    "car-number": "Registreringsnummer",
+    "car-description": "Märke & Modell",
+    "subtitle": "Hos oss kan du enkelt boka tid för ditt fordon. Vi erbjuder flera verkstadstjänster såsom service, hjulskifte eller lagning av din vindruta. Fyll i fälten och klicka dig sedan vidare till nästa steg med knappen längst ned till höger.",
+    "brand-mismatch": "Det registreringsnummer du anget är inte en {{ brand }} vill du gå till bokningssidan för ",
+    "no-car-reg": "Vi hittade ingen bil med det registreringsnumret. \n Kontrollera så det stämmer.",
+    "no-car-chassi": "Vi hittade ingen bil med det chassinummret. \n Kontrollera så det stämmer.",
+    "registration-number": {
+      "placeholder": "ABC 123",
+      "subtitle": "Ange registreringsnummer:"
+    },
+    "vin-number": {
+      "title": "VIN / chassinummer",
+      "subtitle": "Ange chassinummer"
+    },
+    "mil": {
+      "title": "Ange miltal (närmaste hundratal):"
+    },
+    "my-booking": {
+      "installments": "Med {{ card }}:",
+      "currency": "kr",
+      "period": "kr/mån"
+    },
+    "header-step": {
+      "title": "Steg",
+      "of": "av"
+    },
+    "info-card": {
+      "header": "Om din bil",
+      "body": "Vi behöver ditt registreringsnummer och antal mil för att kunna erbjuda dig bästa möjliga omhändertagande av din bil. Fyll i fälten och klicka dig vidare till nästa steg med knappen nere till höger."
+    }
+  },
+  "choose-garage": {
+    "header": "Välj verkstadstjänster",
+    "footer-button": "Nästa steg",
+    "footer-title": "Din bokning:",
+    "summary-subtitle": "Valda tjänster",
+    "title": "2. Välj verkstadstjänster",
+    "subtitle": "Här väljer du en eller flera verkstadstjänster du önskar få hjälp med under ditt verkstadsbesök. Du får fylla i ytterligare detaljer i steg 4.",
+    "service": "Service",
+    "troubleshooting": "Felsökning",
+    "wheel": "Däck",
+    "windscreen": "Vindruta",
+    "tech-update": {
+      "title": "Teknisk uppdatering",
+      "body-1": "Det finns en teknisk uppdatering tillgänglig för ditt fordon, den kommer utföras kostnadsfritt vid nästa verkstadsbesök. Vi kommer ge dig information om vad den innebär i samband med verkstadsbesöket.",
+      "body-4": "Det finns en teknisk uppdatering tillgänglig för ditt fordon. Den kommer utföras kostnadsfritt vid nästa verkstadsbesök. Vi kommer ge dig information om vad den innebär i samband med verkstadsbesöke"
+    },
+    "info-card": {
+      "header": "Välj verkstadstjänster",
+      "body": "Här väljer du de verkstadstjänster du önskar få hjälp med, du får fylla i ytterligare detaljer i steg 4."
+    }
+  },
+  "find-garage": {
+    "loading": "Laddar karta och platser",
+    "missing": "Hittade inte din verkstad, prova hämta alla istället.",
+    "get-all": "Hämta alla",
+    "footer-button": "Nästa steg",
+    "header": "Välj verkstad",
+    "footer-title": "Din bokning:",
+    "summary-title-1": "Företag",
+    "summary-title-2": "Adress",
+    "title": "3. Välj verkstad",
+    "title-upper": "Verkstad",
+    "subtitle": "Välj eller sök efter önskad verkstad.",
+    "sort": "Sorterar på: ",
+    "distance": "Avstånd",
+    "wait": "Uppskattad väntetid",
+    "time": "Tillgänglig Tid"
+  },
+  "choose-specifications": {
+    "loading": "Laddar tillgängliga verkstadstjänster",
+    "header": "Ange verkstadstjänst",
+    "footer-button": "Nästa steg",
+    "footer-title": "Din bokning:",
+    "title": "4. Ange verkstadstjänst",
+    "subtitle": "Gör dina verkstadsval och eventuella tillval.",
+    "more-jobs": "Följande jobb ska också utföras vid angiven mätarställning",
+    "service-agreement": "Serviceavtal giltighetstid:",
+    "service-agreement-valid": "Gäller till mätarställning:",
+    "service-agreement-link": "Klicka här för att välja en återförsäljare där ditt avtal gäller.",
+    "service-agreement-missing-dealer-title": "Ditt serviceavtal gäller inte!",
+    "service-agreement-missing-dealer-body": "Ditt serviceavtal gäller inte för den återförsäljare du valt, vänligen byt till en återförsäljare du har service avtal hos i föregående steg.",
+    "road-assistant": "vägassistans",
+    "basservice-explanation-1": "En ",
+    "basservice-explanation-2": " är en åldersanpassad {{ brand }} originalservice där endast det som är allra viktigast för bilens funktionalitet och livslängd ingår. Efter en genomförd Basservice så ingår fri vägassistans dygnet runt i ett helt år.\n",
+    "mobility-promo-1": "Du har ett serviceavtal vilket innebär att servicen är kostnadsfri. Du är även berättigad ",
+    "mobility-promo-2": "",
+    "service": {
+      "title": "Service",
+      "rather": "Vill du göra en komplett ",
+      "not-found": "Tyvärr hittades inget serviceförslag. \n \n Det kan bero på att systemet inte hittar något förslag just nu eller att din bil faktiskt inte är i behov av service.\n \n Om du vet att bilen är behov av service eller det gäller något annat, skriv gärna till oss under Övrigt och lägg en bokning så kontaktar vi dig!"
+    },
+    "extra-service": {
+      "title": "Extraval - Service",
+      "subtitle": "Din bil har gått {{ miles }} mil."
+    },
+    "troubleshooting": {
+      "title": "Felsökning"
+    },
+    "windscreen": {
+      "date-select-summary": "Skadedatum",
+      "place-summary": "Skadeplats",
+      "reason-summary": "Skadeanledning",
+      "damage-summary": "Skadebeskrivning"
+    },
+    "tech-update": {
+      "title": "Teknisk uppdatering",
+      "subtitle": "Välj din tekniska uppdatering"
+    },
+    "other": {
+      "title": "Övrigt",
+      "subtitle": "Behöver du hjälp med något annat i samband med ditt besök så skriv det här.",
+      "explanation": "Försök vara så tydlig som möjligt så kommer vi kunna hjälpa dig på bästa sätt. "
+    },
+    "info-card": {
+      "header": "Ange verkstadstjänst",
+      "body": "Här kan du se pris och göra val för de tjänster du valde i steg 2. \n \n Om det är något du tycker verkstaden bör känna till eller om något är oklart så kan du skriva det under Övrigt."
+    }
+  },
+  "extra-services": {
+    "loading": "Laddar extratjänster och tillval",
+    "header": "Tilläggstjänster",
+    "footer-title": "Din bokning:",
+    "footer-button": "Nästa steg",
+    "subtitle": "Lägg till valfria tilläggstjänster eller produkter.",
+    "title": "5. Välj tilläggstjänster",
+    "services": {
+      "title": "Extraval - tjänster",
+      "subtitle": "Vanligaste tilläggstjänsterna för din bilmodell:"
+    },
+    "extras": {
+      "title": "Extraval - tillbehör",
+      "subtitle": "Populära produkter för din bil:"
+    }
+  },
+  "garage-time": {
+    "loading": "Laddar tillgängliga verkstadstider",
+    "not-found": "Hittade inga verkstadstider för ditt val",
+    "title": "6. Välj verkstadstid",
+    "header": "Verkstadstider",
+    "footer-button": "Nästa steg",
+    "footer-title": "Din bokning:",
+    "subtitle": "Välj dag, tid och inlämningsalternativ.",
+    "leaving": {
+      "title": "Välj när du vill lämna in din bil:"
+    },
+    "transport": {
+      "title": "Behöver du transport till och från verkstad?"
+    }
+  },
+  "contact-information": {
+    "header": "Kontaktuppgifter",
+    "footer-button": "Nästa steg",
+    "footer-title": "Din bokning:",
+    "title": "7. Fyll i kontaktuppgifter",
+    "subtitle": "Ange kontaktuppgifter och avsluta bokning.",
+    "contact-form": {
+      "first-name": "Förnamn",
+      "first-name-error": "Skriv ett riktigt namn",
+      "last-name": "Efternamn",
+      "last-name-error": "Skriv ett riktigt namn",
+      "phone": "Telefonnummer",
+      "phone-error": "Skriv ett korrekt telefonnummer",
+      "email": "E-postadress",
+      "email-error": "Skriv en korrekt e-postadress",
+      "verify-email": "Verifiera din e-postadress",
+      "verify-email-error": "E-postadresserna stämmer inte överens"
+    },
+    "extended-form": {
+      "title": "Övrig information",
+      "discount": "Kampanjkod",
+      "discount-placeholder": "Fyll i Kampanjkod",
+      "discount-confirm": "Verifiera",
+      "other": "Ev. övrig information till verkstaden",
+      "discount-percent": "Din kampanjkod ger {{ discount }}% rabatt.",
+      "discount-amount": "Din kampanjkod ger {{ discount }}kr rabatt.",
+      "other-placeholder": "Ex. lämnar någon annan än du in bilen?"
+    },
+    "booking": {
+      "title": "Bokningsbekräftelse",
+      "subtitle": "Du kommer att få en bokningsbekräftelse via e-post. Vill du även få den via SMS?",
+      "checkbox-text": "Jag vill få en bekräftelse vi SMS"
+    },
+    "personal": {
+      "user-info": "personuppgifter",
+      "usage-condition": "användarvillkor",
+      "usage-conditions": "användarvillkoren",
+      "checkbox-text-1": "Jag godkänner",
+      "checkbox-text-2": "samt hanteringen av"
+    }
+  },
+  "booking": {
+    "title": "Granska bokning",
+    "footer-button": "Boka nu",
+    "text": "Kontrollera att uppgifterna nedan stämmer och slutför din bokning",
+    "footer": {
+      "title-review-1": "Gå vidare för att ",
+      "title-review-2": "granska din bokning",
+      "title-booking-1": "Slutför bokningen ",
+      "title-booking-2": "av verkstadstjänster"
+    }
+  },
+  "summary": {
+    "pay": {
+      "title": "Att betala",
+      "part-sum": "Delsumma",
+      "discount": "Rabattkod",
+      "total": "Totalt",
+      "part-pay": "Delbetala",
+      "part-pay-notice": "* Observera att bokningen innehåller ett eller flera från-priser. Verkstaden kommer informera dig om faktiskt pris senare."
+    },
+    "missing": {
+      "title": "Information saknas",
+      "body": "Återgå till bokningen och fyll i angivna steg"
+    }
+  },
+  "dialog": {
+    "userinfoconsent": "Personuppgifter",
+    "usageconditions": "Användarvillkor",
+    "will-invalidate-form": {
+      "body": "Om du uppdaterar formuläret här kommer det du fyllt i längre fram att tas bort, vill du fortsätta?",
+      "confirm": "Ja",
+      "deny": "Nej"
+    }
+  },
+  "checkbox-card": {
+    "workshop": {
+      "services": "Tjänster",
+      "about-us": "Om oss",
+      "hours": "Öppettider",
+      "contact": "Kontakta oss"
+    }
+  },
+  "original-service": {
+    "key": "Originalservice",
+    "vw": "Välj Service lika noga som du väljer bil. Du vet säkert att din bil har serviceplan och att det med olika intervaller bör genomföras service av olika slag, om du inte följer serviceplanen riskerar din bil att gå sönder. Varje bil som produceras är unik och kräver både avancerad utrustning och en hel del utbildning för att kunna servas på rätt sätt. VI är experter på just din bil och genom att välja Originalservice kan vi säkerställa att både livslängden och andrahandsvärdet på din bil ökar. Att vara märkesverkstad innebär att vi ser till att din bil förblir 100% original. \n \n Läser mer om vad som ingår i en VW Originalservice. \n Originalservice är ett samlingsbegrepp som innefattar de olika servicemoment som skall utföras på din bil. Vid olika tidpunkter och miltal genomförs olika servicemoment enligt ett från fabriken framtaget servicekoncept. Servicepunkterna skilljer sig något mellan olika bilmodeller. Nedan visar vi de vanligaste gemensamma momenten för personbilar. ",
+    "audi": "Välj Service lika noga som du väljer bil. Du vet säkert att din bil har serviceplan och att det med olika intervaller bör genomföras service av olika slag, om du inte följer serviceplanen riskerar din bil att gå sönder. Varje bil som produceras är unik och kräver både avancerad utrustning och en hel del utbildning för att kunna servas på rätt sätt. VI är experter på just din bil och genom att välja Originalservice kan vi säkerställa att både livslängden och andrahandsvärdet på din bil ökar. Att vara märkesverkstad innebär att vi ser till att din bil förblir 100% original. \n \n Läser mer om vad som ingår i en Audi Originalservice. \n Originalservice är ett samlingsbegrepp som innefattar de olika servicemoment som skall utföras på din bil. Vid olika tidpunkter och miltal genomförs olika servicemoment enligt ett från fabriken framtaget servicekoncept. Servicepunkterna skilljer sig något mellan olika bilmodeller. Nedan visar vi de vanligaste gemensamma momenten för personbilar. ",
+    "cupra": "Välj Service lika noga som du väljer bil. Du vet säkert att din bil har serviceplan och att det med olika intervaller bör genomföras service av olika slag, om du inte följer serviceplanen riskerar din bil att gå sönder. Varje bil som produceras är unik och kräver både avancerad utrustning och en hel del utbildning för att kunna servas på rätt sätt. VI är experter på just din bil och genom att välja Originalservice kan vi säkerställa att både livslängden och andrahandsvärdet på din bil ökar. Att vara märkesverkstad innebär att vi ser till att din bil förblir 100% original. \n \n Läser mer om vad som ingår i en Cupra Originalservice. \n Originalservice är ett samlingsbegrepp som innefattar de olika servicemoment som skall utföras på din bil. Vid olika tidpunkter och miltal genomförs olika servicemoment enligt ett från fabriken framtaget servicekoncept. Servicepunkterna skilljer sig något mellan olika bilmodeller. Nedan visar vi de vanligaste gemensamma momenten för personbilar. ",
+    "seat": "Välj Service lika noga som du väljer bil. Du vet säkert att din bil har serviceplan och att det med olika intervaller bör genomföras service av olika slag, om du inte följer serviceplanen riskerar din bil att gå sönder. Varje bil som produceras är unik och kräver både avancerad utrustning och en hel del utbildning för att kunna servas på rätt sätt. VI är experter på just din bil och genom att välja Originalservice kan vi säkerställa att både livslängden och andrahandsvärdet på din bil ökar. Att vara märkesverkstad innebär att vi ser till att din bil förblir 100% original. \n \n Läser mer om vad som ingår i en Seat Originalservice. \n Originalservice är ett samlingsbegrepp som innefattar de olika servicemoment som skall utföras på din bil. Vid olika tidpunkter och miltal genomförs olika servicemoment enligt ett från fabriken framtaget servicekoncept. Servicepunkterna skilljer sig något mellan olika bilmodeller. Nedan visar vi de vanligaste gemensamma momenten för personbilar. ",
+    "skoda": "Välj Service lika noga som du väljer bil. Du vet säkert att din bil har serviceplan och att det med olika intervaller bör genomföras service av olika slag, om du inte följer serviceplanen riskerar din bil att gå sönder. Varje bil som produceras är unik och kräver både avancerad utrustning och en hel del utbildning för att kunna servas på rätt sätt. VI är experter på just din bil och genom att välja Originalservice kan vi säkerställa att både livslängden och andrahandsvärdet på din bil ökar. Att vara märkesverkstad innebär att vi ser till att din bil förblir 100% original. \n \n Läser mer om vad som ingår i en Skoda Originalservice. \n Originalservice är ett samlingsbegrepp som innefattar de olika servicemoment som skall utföras på din bil. Vid olika tidpunkter och miltal genomförs olika servicemoment enligt ett från fabriken framtaget servicekoncept. Servicepunkterna skilljer sig något mellan olika bilmodeller. Nedan visar vi de vanligaste gemensamma momenten för personbilar. "
+  },
+  "cookie": {
+    "disclaimer": "Volkswagen Group Sverige AB använder cookies för att ge dig bästa möjliga upplevelse på vår webbplats, till exempel för att anpassa innehåll och annonser, tillhandahålla funktioner för sociala medier och för att analysera webbtrafiken. För bästa användarupplevelse rekommenderar vi att du aktiverar alla cookies men du kan självklart anpassa det efter dina behov.",
+    "consent": "Acceptera",
+    "adjust": "Anpassa",
+    "save": "Spara",
+    "essential": "Nödvändiga cookies",
+    "essential-body": "Dessa cookies behövs för att vår webbplats ska fungera och de kan inte stängas av i våra system. De lagras vanligtvis endast som svar på åtgärder du vidtar, som innebär en begäran om tjänster, som t.ex. att göra integritetsinställningar, logga in eller fylla i formulär. Du kan ställa in din webbläsare så att den blockerar eller varnar dig om dessa cookies, men då kommer vissa delar av webbplatsen inte att fungera. Dessa cookies lagrar ingen information som identifierar dig som person.",
+    "tracking": "Tracking cookies",
+    "tracking-body": "Dessa cookies gör att vi kan räkna besökare och trafikkällor så att vi kan mäta och förbättra prestandan på vår webbplats. De hjälper oss att ta reda på vilka sidor som är mest och minst populära och se hur besökare navigerar omkring på webbplatsen. All information som dessa cookies samlar in är sammantagen och därför anonym. Om du inte tillåter dessa cookies kommer vi inte veta när du har besökt vår webbplats och vi kan inte övervaka dess prestanda."
+  },
+  "gdpr-links": {
+    "default": "https://www.volkswagen.se/sv/om-volkswagen/juridiskt/gdpr.html",
+    "vw": "https://www.volkswagen.se/sv/om-volkswagen/juridiskt/gdpr.html",
+    "audi": "https://www.audi.se/se/web/sv/tools/navigation/layer/legal/gdpr/vss-personuppgiftshantering.html",
+    "cupra": "https://www.volkswagen.se/sv/om-volkswagen/juridiskt/gdpr.html",
+    "seat": "https://www.seat.se/foretaget/privacy-policy.html",
+    "skoda": "https://www.skoda.se/mer-skoda/vgs-integritetspolicy",
+    "read-more": "Läs mer om hanteringen av personuppgifter"
+  },
+  "mobility-links": {
+    "vw": "https://www.volkswagen.se/sv/aga-en-vw/garantier.html",
+    "skoda": "https://www.skoda.se/aga-bil/mobilitetsgarantin",
+    "vwtransport": "https://www.volkswagen-transportbilar.se/sv/aga-bil/garantier-och-assistans.html#mobilitetsgaranti",
+    "audi": "https://www.audi.se/se/web/sv/customer-area/service-reparation/garanti.html#Mobilitetsgaranti",
+    "seat": "https://www.seat.se/aga/service/seat-mobility/seat-mobility"
+  },
+  "brand-card": {
+    "pre-header": "Ansök om",
+    "card-text": {
+      "vw": "Volkswagenkortet",
+      "skoda": "Skodakortet",
+      "audi": "Audikortet",
+      "seat": "Seatkortet",
+      "cupra": "Seatkortet"
+    },
+    "body": "Få poäng på alla inköp. Avgifts-och räntefri delbetalning i 12 månader.",
+    "link": {
+      "vw": "https://partner.ikanobank.se/web/volkApplication",
+      "skoda": "https://partner.ikanobank.se/web/skodaApplication",
+      "audi": "https://partner.ikanobank.se/web/audiApplication",
+      "seat": "https://partner.ikanobank.se/web/seatApplication",
+      "cupra": "https://partner.ikanobank.se/web/seatApplication"
+    },
+    "link-text": "Läs mer och ansök här"
+  },
+  "complete": {
+    "processing": "Behandlar din bokning",
+    "booking-confirmation": "Bokningsbekräftelse",
+    "fail": "Order misslyckades",
+    "not-filled": "Formuläret är inte korrekt ifyllt, vänligen fyll i det först",
+    "thanks": "Tack för din",
+    "booking": "bokning",
+    "done": "Vi kommer nu kontrollera din bokning och återkopplar inom kort med en slutgiltig bekräftelse",
+    "add-to-calendar": "Lägg till ditt verkstadsbesök direkt i din kalender!"
+  },
+  "damage-report": {
+    "title": "Skadeanmälan online",
+    "subtitle": "Gör din skadeanmälan online så går det snabbare när du besöker oss. Självklart kan vi även hjälpa dig när du besöker oss.",
+    "insurance": "försäkringsbolag",
+    "insurance-title": "Vilket är ditt försäkringsbolag?",
+    "date-select-title": "Ange datum skadan inträffade",
+    "date-select-placeholder": "Välj datum",
+    "place-summary": "Skadeplats",
+    "place-title": "Ange platsen där skadan inträffade",
+    "place-placeholder": "t.ex. Storgatan 10, Stockholm",
+    "reason-summary": "Skadeanledning",
+    "reason-title": "Ange anledningen till att skadan inträffade",
+    "reason-placeholder": "t.ex. stenskott, vandalism, stöld etc",
+    "damage-summary": "Skadebeskrivning",
+    "damage-title": "Ange själva skadan på vindrutan",
+    "damage-placeholder": "t.ex. spricka nedre högra hörnet",
+    "file-title": "Ladda upp en bild på din vindruta (valfri)",
+    "file-size-error": "Filen är för stor, max 30mb",
+    "file-upload": "Ladda upp bild"
+  },
+  "fault-report": {
+    "title": "Felanmälan online",
+    "subtitle": "Gör din felanmälan online så går det snabbare när du besöker oss. Självklart kan vi även hjälpa dig när du besöker oss.",
+    "subtitle1": "Beskriv felet",
+    "subtitle2": "Lyser någon varningslampa? (valfri)",
+    "file-upload": "Ladda upp bild",
+    "file-desc": "Ladda upp en bild på vad som är fel (valfri)",
+    "file-size-error": "Filen är för stor, max 30mb"
+  },
+  "maintenance-text": "Något gick fel hos oss.",
+  "mobility-explanation": "När du behöver hjälp med bilen vid ett akut driftstopp/okörbar bil kan du ringa vår larmcentral dygnet runt. \n \n Direkt på plats får du hjälp med enklare reparationer såsom säkringar, generatorremmar, slangklämmor mm. Får du punktering så får du hjälp med att skifta till reservdäcket eller att använda bilens däcklagningssats. \n \n Mobilitetsgaranti gäller vid akut driftstopp, dvs att bilen inte med egen kraft kan köras till verkstaden eller att tillverkaren inte tillåter vidare färd på grund av tekniska omständigheter.",
+  "usage-condition-explanation": "Denna tjänst är framtagen av Volkswagen Group Sverige AB, sbo@vwgroup.se. Vi reserverar oss för eventuella fel på tjänsten och det serviceförslag som presenteras. Priserna som anges i denna tjänst är preliminära tills dess att din lokala verkstad har bekräftat dessa och din bokning. \n\n Vi förbehåller oss rätten för eventuella ändringar eller avvikelser i tjänsten. ",
+  "user-info-consent-explanation": "Volkswagen Group Sverige AB samlar in dina personuppgifter för att du ska kunna genomföra en bokning & kommer att dela med sig av dina personuppgifter till den Volkswagen auktoriserade partner som du valt för att kunna genomföra bokningen. \n \n Volkswagen Group Sverige AB kommer att spara dina uppgifter i 3 månader för bl.a. uppföljning och felsökning.",
+  "road-assistant-explanation": "Efter genomförd Basservice för Volkswagen-bilar av modellår 1985 till 2012 ingår ett års Vägassistans. Vägassistans omfattar kostnadsfri bärnings- eller starthjälp, dygnet runt om du skulle råka ut för ett driftstopp med din Volkswagen. \n \n Ring journummer 077-11 11 512 så får du den hjälp du behöver. \n \n Försäkringsnumret och bilens registreringsnummer ska anges vid samtalet. Försäkringsbeviset ska visas upp för bärgaren för att Vägassistans ska vara giltig.\n \n Detta ingår i Vägassistans: \n Efter genomförd Basservice gäller inte Mobilitetsgaranti utan istället Vägassistans.  \n Vägassistansen gäller i 1 år fr.o.m. utskriftsdatumet på servicefakturan (datumet då service är utförd och betald) med följande villkor: \n \n Vägassistans är bunden till bilen och kan ej överlåtas till annan bil. Däremot följer Vägassistans med vid försäljning av bilen. Vägassistans gäller endast i Sverige. Försäkringsbeviset måste uppvisas för att Vägassistans ska vara giltig. \n Vägassistans gäller endast för bärgning av fordon eller ev. starthjälp om fordonet fått driftstopp. Som driftstopp räknas även fall då fordonets nyckel förlorats, blivit obrukbar eller är inlåst i fordonet. Assistans vid punktering omfattas också av Vägassistans. \n Däremot omfattar Vägassistans inte bärgning i samband med trafikolycka, singelolycka, skadegörelse, stöld-/inbrottsförsök, glasskador eller liknande.\n Ersättning lämnas för skälig bärgningskostnad till närmaste märkesverkstad som kan reparera fordonet. \n Ingen självrisk tas ut.",
+  "external-tyre-body": "Denna verkstad använder en extern sida för däckbokning, om du vill boka flera tjänster kan du fortsätta på denna sida, vill du boka enbart däcktjänster använder du följande länk.",
+  "external-tyre-follow": "Gå vidare till extern sida",
+  "external-tyre-reject": "Stanna kvar",
+  "external-tyre-tooltip": "För att boka endast däcktjänster på denna verkstad skall en separat tjänst användas. För att gå vidare här måste en annan tjänst läggas till.",
+  "external-tyre-info-card-body": "Denna verkstad använder extern däckbokning, om du vill boka flera tjänster kan du fortsätta här, vill du endast boka en däcktjänst använder du följande ",
+  "external-tyre-info-card-header": "Extern däckbokning",
+  "missing-selection-tooltip": "Du har inte valt något huvud jobb, för att underlätta för oss hjälper det ifall du valt åtminstone 1.",
+  "vw": "volkswagen",
+  "skoda": "skoda",
+  "audi": "audi",
+  "seat": "seat",
+  "cupra": "cupra",
+  "request-fail": {
+    "title": "Ett fel inträffade hos oss. :(",
+    "subtitle": "Försök gärna igen senare eller kontakta din verkstad för att boka tid.",
+    "return": "Återvänd till start"
+  },
+  "mobility-guaranteed": "Mobilitetsgaranti",
+  "road-assistant-short-1": "I samband med utförd Basservice ingår även ",
+  "road-assistant-short-2": " under ett år.",
+  "your-car-is-subject": "omfattas din bil av ",
+  "the-following-jobs": " när följande moment utförs",
+  "when-completed": "Vid genomförd",
+  "windscreen-wizard": {
+    "title": "Vad har du för typ av skada?",
+    "how-many": "Hur många stenskott har du?",
+    "crack": "Spricka",
+    "stone-shot": "Stenskott",
+    "redo": "Gör om",
+    "recommendation": "Vi föreslår:",
+    "or-more": "eller fler",
+    "or-less": "eller färre"
+  },
+  "applicationMessages": {
+    "title": "Kundmeddelande"
+  },
+  "service-history-warning": " Då systemet saknar fullständig servicehistorik så kan du själv välja de jobb din bil behöver enligt serviceboken vid aktuell mätarställning. Vi kommer självklart hjälpa till att kontrollera detta i samband med hanteringen av bokningen så att bilen får rätt underhåll.",
+  "your-price": "Ditt pris",
+  "ordinary-price": "Ordinarie pris",
+  "os5+": "{{ name }} har samma innehåll som en vanlig Originalservice men priset har anpassats beroende på din årsmodell.",
+  "no-complete-service": "Ingen komplett originalservice. \n Mobilitetsgarantin gäller inte.",
+  "adjust-cookies": "Anpassa inställningar för cookies",
+  "cookies": "Cookies"
+}

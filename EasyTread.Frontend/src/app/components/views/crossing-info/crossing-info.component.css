@@ -1,0 +1,16 @@
+.img-green {
+  filter: brightness(0) saturate(100%) hue-rotate(90deg);
+}
+
+.img-warning {
+  filter: brightness(0) saturate(100%) hue-rotate(40deg);
+}
+
+.img-danger {
+  filter: brightness(0) saturate(100%) hue-rotate(0deg);
+}
+
+.btn-custom {
+  background-color: #1e0050;
+  color: #ffffff;
+}

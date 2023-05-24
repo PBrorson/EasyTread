@@ -1,0 +1,123 @@
+<div class="main-content d-flex flex-grow-1 flex-column">
+  <div class="border w-100" [formGroup]="form">
+    <div class="m-2">
+      <div class="row align-items-center">
+        <div class="col-4">
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="searchText"
+              placeholder="{{ 'license plate' | translate }}"
+              (keyup)="filterTable()"
+            />
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              *ngIf="form?.get('searchText')?.value !== ''"
+              (click)="form.get('searchText')?.setValue(''); filterTable()"
+              style="background-color: #e9ecef"
+            >
+              <i class="bi bi-x-circle-fill" style="color: red"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>{{ "timestamp" | translate }}</th>
+              <th>{{ "license plate" | translate }}</th>
+              <th>{{ "front left" | translate }}</th>
+              <th>{{ "front right" | translate }}</th>
+              <th>{{ "rear left" | translate }}</th>
+              <th>{{ "rear right" | translate }}</th>
+              <th>{{ "crossing" | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let item of (myData$ | async)?.slice().reverse()
+                  | paginate : { itemsPerPage: itemsPerPage, currentPage: page }
+              "
+            >
+              <td>
+                {{ formatCompactDate(item.createdTime) }}
+              </td>
+              <td>{{ item.licensePlate.plate }}</td>
+              <ng-container *ngFor="let tire of item.tires">
+                <td>
+                  <i
+                    class="bi"
+                    [ngClass]="[
+                      statusInfo[tire.regionResponse[0].vehicleRating].icon,
+                      statusInfo[tire.regionResponse[0].vehicleRating]
+                        .colorClass
+                    ]"
+                    title="{{
+                      statusInfo[tire.regionResponse[0].vehicleRating].message
+                        | translate
+                    }}"
+                  ></i>
+                  {{
+                    statusInfo[tire.regionResponse[0].vehicleRating].message
+                      | translate
+                  }}
+                </td>
+              </ng-container>
+
+              <td>
+                {{ item.crossingDirection | translate }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+          <ul class="pagination justify-content-center">
+            <li class="page-item" [class.disabled]="page === 1">
+              <a
+                class="page-link"
+                (click)="page = page - 1"
+                [ngStyle]="{
+                  color: page === 1 ? '#adb5bd' : '#1e0050',
+                  'pointer-events': page === 1 ? 'none' : 'auto'
+                }"
+                >{{ "previous" | translate }}</a
+              >
+            </li>
+            <li
+              class="page-item"
+              *ngFor="let p of getPageRange()"
+              [class.active]="p === page"
+            >
+              <a
+                class="page-link"
+                (click)="page = p"
+                [ngStyle]="{
+                  color: p === page ? '#fff' : '#1e0050',
+                  'background-color': p === page ? '#1e0050' : '#fff'
+                }"
+                >{{ p }}</a
+              >
+            </li>
+            <li class="page-item" [class.disabled]="page === totalPages">
+              <a
+                class="page-link"
+                (click)="page = page + 1"
+                [ngStyle]="{
+                  color: page === totalPages ? '#adb5bd' : '#1e0050',
+                  'pointer-events': page === totalPages ? 'none' : 'auto'
+                }"
+                >{{ "next" | translate }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

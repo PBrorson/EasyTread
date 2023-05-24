@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+@font-face {
+  font-family: "HelveticaNeue-Light";
+  src: url("../src/assets/HelveticaNeue-Light.ttf") format("truetype");
+}
+
+body {
+  font-family: "HelveticaNeue-Light", sans-serif;
+}
+
+.my-font {
+  font-family: "HelveticaNeue-Light", sans-serif;
+}
+
+.bg-sidebar {
+  background-color: #f1f0f0;
+}
+
+.chart-canvas {
+  width: 100%;
+  height: 300px;
+}
+
+.btn-custom {
+  background-color: #1e0050;
+  color: #ffffff;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

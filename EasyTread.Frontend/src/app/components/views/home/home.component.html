@@ -1,0 +1,194 @@
+<div class="my-font">
+  <div class="main-content d-flex flex-grow-1 flex-column">
+    <div class="border w-100" [formGroup]="form">
+      <div class="m-2">
+        <div class="row justify-content-between">
+          <div class="col-md-4 d-flex align-items-center">
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-search"></i></span>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="searchText"
+                placeholder="{{ 'license plate' | translate }}"
+                (keyup)="filterTable()"
+                (input)="filterTable()"
+              />
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                *ngIf="form?.get('searchText')?.value !== ''"
+                (click)="clearSearchField()"
+                style="background-color: #e9ecef"
+              >
+                <i class="bi bi-x-circle-fill" style="color: red"></i>
+              </button>
+            </div>
+            <button
+              class="btn btn-outline-secondary"
+              (click)="openCrossingChart()"
+            >
+              <i class="bi bi-pie-chart" style="color: black"></i>
+            </button>
+          </div>
+
+          <ng-template #pieChartContent>
+            <div class="chart-container">
+              <app-crossing-chart></app-crossing-chart>
+            </div>
+          </ng-template>
+
+          <div class="col-md-4 d-flex justify-content-end align-items-center">
+            <div
+              *ngIf="showAlert"
+              class="alert alert-success position-absolute top-0 end-0 m-3"
+              role="alert"
+            >
+              {{ "new reading" | translate }}
+            </div>
+            <app-date-picker></app-date-picker>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th (click)="setSortField('createdTime')">
+                {{ "timestamp" | translate }}
+              </th>
+              <th (click)="setSortField('licensePlate.plate')">
+                {{ "license plate" | translate }}
+              </th>
+              <th>{{ "brand" | translate }}</th>
+              <th>{{ "model" | translate }}</th>
+              <th>{{ "action" | translate }}</th>
+              <th (click)="setSortField('item.dealerNumber')">
+                {{ "retailer" | translate }}
+              </th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of getDataForCurrentPage() | async">
+              <td>{{ formatCompactDate(item.createdTime) }}</td>
+              <td>{{ item.licensePlate.plate }}</td>
+              <td></td>
+              <td></td>
+              <td>
+                <ng-container
+                  *ngIf="
+                    !checkTireAlignment(item) &&
+                    !checkTirePressure(item) &&
+                    !checkTireRating(item)
+                  "
+                >
+                  <i
+                    class="bi"
+                    [ngClass]="[
+                      statusInfo[item.vehicleRating].icon,
+                      statusInfo[item.vehicleRating].colorClass
+                    ]"
+                    title="{{
+                      statusInfo[item.vehicleRating].message | translate
+                    }}"
+                  ></i>
+                </ng-container>
+
+                <i
+                  *ngIf="checkTireAlignment(item)"
+                  class="warning-icon"
+                  title="{{ 'check tire alignment' | translate }}"
+                >
+                  <img
+                    src="../../../../assets/tirealignment.png"
+                    alt="{{ 'check tire alignment' | translate }}"
+                    style="width: 70px; height: 25px"
+                  />
+                </i>
+
+                <i
+                  *ngIf="checkTirePressure(item)"
+                  class="warning-icon"
+                  title="{{ 'check tire pressure' | translate }}"
+                >
+                  <img
+                    src="../../../../assets/pressurecheck.png"
+                    alt="{{ 'check tire pressure' | translate }}"
+                    style="width: 70px; height: 25px"
+                  />
+                </i>
+
+                <i
+                  *ngIf="checkTireRating(item)"
+                  class="warning-icon"
+                  title="{{ 'check tire rating' | translate }}"
+                >
+                  <img
+                    src="../../../../assets/tirechange.png"
+                    alt="{{ 'check tire rating' | translate }}"
+                    style="width: 70px; height: 25px"
+                  />
+                </i>
+              </td>
+              <td>{{ item.dealerNumber }}</td>
+              <td>
+                <button
+                  (click)="onButtonClick(item)"
+                  type="button"
+                  class="btn btn-secondary btn-sm"
+                >
+                  <i class="bi bi-info-circle"></i>
+                  {{ "details" | translate }}
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-center" *ngIf="entryCount >= 10">
+          <ul class="pagination justify-content-center">
+            <li class="page-item" [class.disabled]="page === 1">
+              <a
+                class="page-link"
+                (click)="page = page - 1"
+                [ngStyle]="{
+                  color: page === 1 ? '#adb5bd' : '#1e0050',
+                  'pointer-events': page === 1 ? 'none' : 'auto'
+                }"
+                >{{ "previous" | translate }}</a
+              >
+            </li>
+            <li
+              class="page-item"
+              *ngFor="let p of getPageRange()"
+              [class.active]="p === page"
+            >
+              <a
+                class="page-link"
+                (click)="page = p"
+                [ngStyle]="{
+                  color: p === page ? '#fff' : '#1e0050',
+                  'background-color': p === page ? '#1e0050' : '#fff'
+                }"
+                >{{ p }}</a
+              >
+            </li>
+            <li class="page-item" [class.disabled]="page === totalPages">
+              <a
+                class="page-link"
+                (click)="page = page + 1"
+                [ngStyle]="{
+                  color: page === totalPages ? '#adb5bd' : '#1e0050',
+                  'pointer-events': page === totalPages ? 'none' : 'auto'
+                }"
+                >{{ "next" | translate }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- <app-pie-chart></app-pie-chart> -->
+  </div>
+</div>

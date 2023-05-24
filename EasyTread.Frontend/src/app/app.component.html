@@ -1,0 +1,18 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css"
+/>
+<div class="my-font">
+  <div class="app-container d-flex flex-column" style="min-height: 100vh">
+    <app-header></app-header>
+    <div class="d-flex flex-grow-1">
+      <app-sidebar></app-sidebar>
+      <div
+        class="main-content d-flex flex-grow-1 flex-column"
+        style="overflow-x: hidden"
+      >
+        <router-outlet> </router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
